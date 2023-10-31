@@ -38,43 +38,8 @@ PROJECT("smartcgms")
 
 INCLUDE(FetchContent)
 
-# We either use the 'devel' branch or the 'master' branch
-SET(BUILDOPT_DEVEL FALSE CACHE BOOL "Use devel branch for this build?")
 # The script will fetch xlnt, ExcelFormat and Eigen3 if instructed to do so
 SET(BUILDOPT_FETCH_ALL_DEPS TRUE CACHE BOOL "Should the script fetch all external dependencies (except Qt)?")
-
-SET(REMOTE_TAG_SPEC "origin/master")
-IF(BUILDOPT_DEVEL)
-	SET(REMOTE_TAG_SPEC "origin/devel")
-ENDIF()
-
-FetchContent_Declare(
-	scgms-common
-	GIT_REPOSITORY https://github.com/SmartCGMS/common.git
-	GIT_TAG "${REMOTE_TAG_SPEC}"
-	SOURCE_DIR "common"
-)
-
-FetchContent_Declare(
-	core
-	GIT_REPOSITORY https://github.com/SmartCGMS/core.git
-	GIT_TAG "${REMOTE_TAG_SPEC}"
-	SOURCE_DIR "core"
-)
-
-FetchContent_Declare(
-	console
-	GIT_REPOSITORY https://github.com/SmartCGMS/console.git
-	GIT_TAG "${REMOTE_TAG_SPEC}"
-	SOURCE_DIR "console"
-)
-
-FetchContent_Declare(
-	desktop
-	GIT_REPOSITORY https://github.com/SmartCGMS/desktop.git
-	GIT_TAG "${REMOTE_TAG_SPEC}"
-	SOURCE_DIR "desktop"
-)
 
 IF(BUILDOPT_FETCH_ALL_DEPS)
 	FetchContent_Declare(
