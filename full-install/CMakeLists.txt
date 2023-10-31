@@ -68,3 +68,8 @@ ENDIF()
 
 # this overrides the SMARTCGMS_COMMON_DIR in all sub-projects
 SET(SMARTCGMS_COMMON_DIR "${scgms-common_SOURCE_DIR}" CACHE PATH "SmartCGMS 'common' directory location" FORCE)
+
+ADD_SUBDIRECTORY(common)
+ADD_SUBDIRECTORY(console)
+ADD_SUBDIRECTORY(core)
+ADD_SUBDIRECTORY(desktop)
