@@ -38,6 +38,8 @@ PROJECT("smartcgms")
 
 INCLUDE(FetchContent)
 
+SET(CMAKE_CXX_STANDARD 20)
+
 # The script will fetch xlnt, ExcelFormat and Eigen3 if instructed to do so
 SET(BUILDOPT_FETCH_ALL_DEPS TRUE CACHE BOOL "Should the script fetch all external dependencies (except Qt)?")
 
