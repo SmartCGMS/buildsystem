@@ -67,7 +67,7 @@ IF(BUILDOPT_FETCH_ALL_DEPS)
 ENDIF()
 
 # this overrides the SMARTCGMS_COMMON_DIR in all sub-projects
-SET(SMARTCGMS_COMMON_DIR "${scgms-common_SOURCE_DIR}" CACHE PATH "SmartCGMS 'common' directory location" FORCE)
+SET(SMARTCGMS_COMMON_DIR "${CMAKE_CURRENT_SOURCE_DIR}/common" CACHE PATH "SmartCGMS 'common' directory location" FORCE)
 
 ADD_SUBDIRECTORY(common)
 ADD_SUBDIRECTORY(console)
