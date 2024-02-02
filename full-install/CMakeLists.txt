@@ -43,6 +43,12 @@ SET(CMAKE_CXX_STANDARD 20)
 # The script will fetch xlnt, ExcelFormat and Eigen3 if instructed to do so
 SET(BUILDOPT_FETCH_ALL_DEPS TRUE CACHE BOOL "Should the script fetch all external dependencies (except Qt)?")
 
+SET(BUILDOPT_NO_RDRAND FALSE CACHE BOOL "Disable rdrand support")
+
+IF(BUILDOPT_NO_RDRAND)
+	ADD_DEFINITIONS(-DDISABLE_RDRAND)
+ENDIF()
+
 IF(BUILDOPT_FETCH_ALL_DEPS)
 	FetchContent_Declare(
 		Eigen3
